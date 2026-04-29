@@ -16,19 +16,37 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-950 text-gray-100 min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <header className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">🎯</span>
-              <div>
-                <h1 className="text-2xl font-bold">EMVY</h1>
-                <p className="text-xs text-gray-500">AI Audit Consultancy</p>
+        <div className="flex min-h-screen">
+          {/* Left Sidebar */}
+          <aside className="w-56 flex-shrink-0 border-r border-gray-800 flex flex-col">
+            {/* Brand */}
+            <div className="p-5 border-b border-gray-800">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-sm">E</span>
+                </div>
+                <div>
+                  <h1 className="text-base font-bold text-white">EMVY</h1>
+                  <p className="text-xs text-gray-500">Ops Dashboard</p>
+                </div>
               </div>
             </div>
-            <StatusBar />
-          </header>
-          <Nav />
-          <main className="mt-6">{children}</main>
+
+            {/* Navigation */}
+            <Nav />
+
+            {/* Status Bar at bottom */}
+            <div className="mt-auto p-4 border-t border-gray-800">
+              <StatusBar />
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <main className="flex-1 overflow-auto">
+            <div className="max-w-6xl mx-auto px-8 py-8">
+              {children}
+            </div>
+          </main>
         </div>
       </body>
     </html>

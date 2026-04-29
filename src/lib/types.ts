@@ -10,27 +10,33 @@ export type LeadStage =
   | 'AUDIT' 
   | 'BUILD' 
   | 'DONE'
-  | 'SKIP';
+  | 'SKIP'
+  | 'HOT'
+  | 'WARM';
 
-export type LeadTemp = 'HOT' | 'WARM' | 'DISCOVERED';
+export type LeadTemp = 'HOT' | 'WARM' | 'COLD';
 
 export interface Lead {
   id: string;
   name: string;
-  company: string;
+  company?: string;
   industry: string;
-  location: string;
+  location?: string;
   website?: string;
   email?: string;
   phone?: string;
+  contact?: string;
+  suburb?: string;
+  signal?: string;
+  icp_fit?: string;
   stage: LeadStage;
   score: number;
   temp?: LeadTemp;
   pain_evidence?: string;
   notes?: string;
-  discovery_date: string;
+  discovery_date?: string;
   last_contact?: string;
-  last_updated: string;
+  last_updated?: string;
 }
 
 export interface SeoChecklistItem {
