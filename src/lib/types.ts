@@ -3,12 +3,14 @@
 export type LeadStage = 
   | 'DISCOVERED' 
   | 'ENRICHED' 
+  | 'RESEARCH'
   | 'SENT' 
   | 'REPLY' 
   | 'CALL' 
   | 'AUDIT' 
   | 'BUILD' 
-  | 'DONE';
+  | 'DONE'
+  | 'SKIP';
 
 export type LeadTemp = 'HOT' | 'WARM' | 'DISCOVERED';
 
@@ -60,7 +62,7 @@ export interface InfrastructureItem {
 export interface Blocker {
   id: string;
   item: string;
-  type: 'domain' | 'api' | 'integration' | 'decision' | 'outreach';
+  type: 'domain' | 'api' | 'integration' | 'decision' | 'outreach' | 'analytics';
   status: 'waiting_on_dusk' | 'waiting_on_external' | 'in_progress';
   notes?: string;
 }

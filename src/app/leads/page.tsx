@@ -43,13 +43,13 @@ const STAGES: LeadStage[] = ['DISCOVERED', 'ENRICHED', 'SENT', 'REPLY', 'CALL', 
 const STAGE_COLORS: Record<string, string> = {
   DISCOVERED: 'bg-indigo-500',
   ENRICHED: 'bg-purple-500',
+  RESEARCH: 'bg-gray-600',
   SENT: 'bg-blue-500',
   REPLY: 'bg-cyan-500',
   CALL: 'bg-pink-500',
   AUDIT: 'bg-amber-500',
   BUILD: 'bg-emerald-500',
   DONE: 'bg-green-600',
-  RESEARCH: 'bg-gray-600',
   SKIP: 'bg-gray-700',
 };
 
